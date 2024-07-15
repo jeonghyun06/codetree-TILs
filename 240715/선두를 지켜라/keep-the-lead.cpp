@@ -44,6 +44,7 @@ int main() {
         }
     }
 
-    cout<<cnt - 1;
+    if(cnt==0) cout<<0;
+    else cout<<cnt - 1;
     return 0;
 }
