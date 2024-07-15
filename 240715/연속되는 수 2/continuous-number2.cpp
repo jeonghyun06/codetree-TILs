@@ -5,9 +5,9 @@ int main() {
     int N;
     cin>>N;
 
-    int maxCnt=0;
+    int maxCnt=1;
     int before=-1;
-    int cnt=0;
+    int cnt=1;
     int n;
     for(int i=0;i<N;i++){
         cin>>n;
