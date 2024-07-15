@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 string s[2];
@@ -12,10 +13,10 @@ void back(int idxS,int idxC, int nxt){
         return;
     }
     string curS = s[nxt];
-    for(int i=idxS; i<curS.length();i++){
-        if(c[idxC] == curS[i]){
-            back(i + 1, idxC+1, (nxt+1)%2);
-        }
+    int tmp = find(curS.begin() + idxS, curS.end(), c[idxC]) - curS.begin();
+    while(tmp!=curS.length()){
+        back(tmp + 1, idxC + 1, (nxt+1)%2);
+        tmp = find(curS.begin() + tmp + 1, curS.end(), c[idxC]) - curS.begin();
     }
 }
 
