@@ -61,9 +61,9 @@ int main() {
                 cnt++;
                 bef = true;
             }
-            else{
-                bef = false;
-            }
+        }
+        else{
+            bef = false;
         }
     }
     cout<<cnt;
