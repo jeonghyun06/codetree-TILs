@@ -15,6 +15,7 @@ int main() {
         cin >> v >> t;
         for(int i=0;i<t;i++){
             A[++time] = cur + v;
+            cur += v;
         }
     }
 
@@ -24,7 +25,7 @@ int main() {
         cin >> v >> t;
         for(int i=0;i<t;i++){
             B[++time] = cur + v;
-
+            cur += v;
         }
     } 
 
