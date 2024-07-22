@@ -10,15 +10,15 @@ int main() {
     int t=0;
 
     int x = 0, y = 0;
-    for(int i=0;i<s.length();i++){
-        if(s[i]=='F'){
+    for(char c: s){
+        if(c=='F'){
             x += dx[dir];
             y += dy[dir];
         }
-        else if(s[i]=='L'){
+        else if(c=='L'){
             dir = (dir+3) % 4;
         }
-        else if(s[i]=='R'){
+        else if(c=='R'){
             dir = (dir+1) % 4;
         }
         t++;
