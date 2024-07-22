@@ -39,9 +39,8 @@ int main() {
     }
     else {
         x = 0;
-        y = n-k;
+        y = 4*n-k;
     }
-    
     while(x<n && x>=0 && y<n && y>=0){
         dir = 3-dir; // d -> r, l ->u, u -> l, r -> d
         if(map[y][x] == 0) dir = (dir + 2) % 4;
