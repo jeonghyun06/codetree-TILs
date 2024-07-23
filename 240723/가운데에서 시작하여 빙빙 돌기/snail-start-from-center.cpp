@@ -16,7 +16,7 @@ int main() {
         box[i][n+1]=-1;
     }
 
-    int cnt = 25;
+    int cnt = n*n;
     int x = n;
     int y = n;
     int dir = 0;
