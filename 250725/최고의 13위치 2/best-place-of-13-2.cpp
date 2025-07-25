@@ -15,7 +15,7 @@ int main() {
         for (int j = 0; j < N - 2; j++){
             for(int k=0;k<N;k++){
                 for(int l=0;l<N-2;l++){
-                    if ((i==k) && abs(j-l)<=1) continue;
+                    if ((i==k) && abs(j-l)<=2) continue;
                     int grid1 = arr[i][j] + arr[i][j+1] + arr[i][j+2];
                     int grid2 = arr[k][l] + arr[k][l+1] + arr[k][l+2];
 
