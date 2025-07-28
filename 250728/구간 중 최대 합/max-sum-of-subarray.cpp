@@ -11,7 +11,7 @@ int main() {
         cin >> arr[i];
     }
 
-    for(int i=0;i<n-k;i++){
+    for(int i=0;i<n-k + 1;i++){
         curSum = 0;
         for (int j=0;j<k;j++){
             curSum += arr[i+j];
