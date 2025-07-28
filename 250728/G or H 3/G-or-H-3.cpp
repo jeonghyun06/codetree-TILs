@@ -14,10 +14,9 @@ int main() {
     }
 
     for (int i=0;i<N;i++){
-        int cursum= c[i]-'F';
-        for(int j=i+1;j<N;j++){
-            if (x[j] < x[i]+K) cursum += c[j]-'F';
-            else break;
+        int cursum= 0;
+        for(int j=0;j<N;j++){
+            if (x[j] >= x[i] && x[j] <= x[i]+K) cursum += c[j]-'F';
         }
         maxsum = max(maxsum, cursum);
     }
