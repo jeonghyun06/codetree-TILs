@@ -10,10 +10,10 @@ int main() {
 
     for (int i = 0; i < N; i++) {
         cin >> cp >> bp;
-        candy[bp] = cp;
+        candy[bp] += cp;
     }
 
-    for(int c = K; c<100-K; c++){
+    for(int c = K; c < 100-K ; c++){
         int curSum = 0;
         for(int i = c-K; i <= c + K; i++){
             curSum += candy[i];
