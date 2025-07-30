@@ -12,11 +12,11 @@ int main() {
     // 계산
     int cnt[3]{};
     for(int i = 0; i < 3; i++){
-        cnt[i] += max(4 - arr[i], 0);
+        cnt[i] += max(N - 2 - arr[i], 0);
         cnt[i] += max(arr[i] - 3, 0);
     }
 
-    cout << 6*6*6 - cnt[0] * cnt[1] * cnt[2];
+    cout << N*N*N - cnt[0] * cnt[1] * cnt[2];
 
     return 0;
 }
