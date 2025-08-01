@@ -16,7 +16,7 @@ int main() {
         for(int j=i+1;j<6;j++){
             for(int k=0;k<6;k++){
                 for(int l = k + 1; l < 6; l++){
-                    if (i==k || j==k || j==l || i==k) continue;
+                    if (i==k || j==k || j==l || i==l ) continue;
                     int team1 = ability[i]+ability[j];
                     int team2 = ability[k]+ability[l];
                     int tmpMax = max({team1, team2, abilitySum - team1-team2});
