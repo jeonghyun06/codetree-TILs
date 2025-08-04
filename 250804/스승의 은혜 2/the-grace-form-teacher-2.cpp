@@ -16,14 +16,14 @@ int main() {
 
     for (int i = 0; i < N; i++){
         int curSum = P[i]/2;
-        int curCnt = 0;
+        int curCnt = 1;
         for (int j = 0; j < N; j++){
             if (i==j) continue;
+            if(curSum>B) break;
             curSum += P[j];
             curCnt++;
-            if(curSum>B) break;
         }
-        cnt = max(cnt, curCnt);
+        cnt = max(cnt, curSum>B?curCnt-1:curCnt);
     }
 
     cout<<cnt;
