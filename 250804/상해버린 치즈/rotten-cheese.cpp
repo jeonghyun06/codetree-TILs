@@ -7,6 +7,13 @@ int N, M, D, S, maxCnt;
 int p[1000], m[1000], t[1000];
 pair<int, int> sick[50];
 
+bool twice( vector<pair<int, int>> vec, int k){
+    for(int i = 0; i < vec.size(); i++){
+        if(vec[i].first==k) return true;
+    }
+    return false;
+}
+
 int main() {
     cin >> N >> M >> D >> S;
 
@@ -21,12 +28,12 @@ int main() {
     for (int i = 1; i <= M; i++){
         vector<pair<int, int>> eat;
         for(int j = 0; j < D; j++){
-            if(m[j]==i) eat.push_back({p[j], t[j]});
+            if(m[j]==i && !twice(eat, p[j])) eat.push_back({p[j], t[j]});
         }
 
         int check = 0;
-        for(int j = 0; j < S; j++){
-            for(int k = 0; k < eat.size(); k++){
+        for(int j = 0; j < S; j++){ // 아픈 사례
+            for(int k = 0; k < eat.size(); k++){ //먹은 애들
                 if(sick[j].first==eat[k].first && sick[j].second > eat[k].second) {
                     check++;
                     break;
