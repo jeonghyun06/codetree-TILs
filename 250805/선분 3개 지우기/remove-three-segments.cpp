@@ -16,14 +16,16 @@ int main() {
     for (int i = 0; i < n; i++){
         for (int j = i + 1; j < n; j++){
             for (int k = j + 1; k < n; k++){
-                bool check = true;
-                for (int m = 1; m < n; m++){
+                bool cc = true;
+                int check[101]{};
+                for (int m = 0; m < n; m++){
                     if (m==i || m==j || m==k) continue;
-                    if (line[m-1].second > line[m].first ) continue;
-                    check = false;
-                    break;
+                    for(int l = line[m].first; l <= line[m].second; l++) check[l]++;
                 }
-                cnt += check ? 1 : 0;
+                for(int m = 1; m < 101; m++){
+                    if(check[m]>1) { cc = false; break;}
+                }
+                cnt += cc ? 1 : 0;
             }
         }
     }
