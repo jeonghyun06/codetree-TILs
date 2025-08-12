@@ -6,12 +6,12 @@ int n, cnt;
 vector<int> beutiful;
 
 void backtracking(int x){
-    if(x==n){
+    if(x == n){
         cnt++;
         return;
     }
-    for(int i = 1;i<=n;i++){
-        if(x + i>n) continue;
+    for(int i = 1;i<=4;i++){
+        if(x + i > n) continue;
         for(int j=0;j<i;j++){
             beutiful.push_back(i);
         }
