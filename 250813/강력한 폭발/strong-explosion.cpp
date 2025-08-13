@@ -21,7 +21,15 @@ void bomb(int b, int x, int y, int check) {
         int cy = y + dy[b][i];
         if (cx < 0 || cy < 0 || cx >= n || cy >= n) continue;
         boom[cx][cy] += check;
-    }   
+    }
+    //for (int i = 0; i < n; i++) {
+    //    for (int j = 0; j < n; j++) {
+    //        cout << boom[i][j]<<' ';
+    //    }
+    //    cout << '\n';
+    //}
+    //cout << '\n';
+   
 }
 
 void backtracing(int cnt) {
@@ -36,6 +44,7 @@ void backtracing(int cnt) {
         return;
     }
     for(int i = cnt; i < bombPos.size(); i++){
+        if (cnt == 0 && i > 0) break;
         boom[bombPos[i].first][bombPos[i].second]++;
         for (int k = 0; k < 3; k++) {
             bomb(k, bombPos[i].first, bombPos[i].second, 1);
