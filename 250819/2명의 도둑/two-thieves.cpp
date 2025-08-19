@@ -3,37 +3,32 @@
 
 using namespace std;
 
-int n, m, c, maxSum;
+int n, m, c, maxSum, sum;
 int weight[10][10];
-pair<int, int> thives[3];
+int x, y;
 
-// 도둑은 2명 -> 겹칠 수 없음
-// 한 row에서 연속되게 고를 수 있음 각각 합이 C 이하
-// 가치는 w^2
+void calSum(int i, int curW, int curV) {
+    if (curW > c || i > m) return;
+    sum = max(sum, curV);
+    calSum(i + 1, curW, curV);
+    calSum(i + 1, curW + weight[x][y + i], curV + weight[x][y + i] * weight[x][y + i]);
+}
 
 void bt() {
-    // 한 열에서 m개 선택. c 이상이면 그 이전까지 계산 
-    // 하나 pop하고 다음꺼 push c 이상인지 봄 -> 
-    // m개씩 두 쌍 선택 완료 -> 제곱 확인
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            int squareSum = 0;
-            int sum = 0;
-            for (int t = 0; t < m; t++) {
-                sum += weight[i][j + t];
-                if (sum > c) break;
-                squareSum += weight[i][j + t] * weight[i][j + t];
-            }
+            x = i;
+            y = j;
+            calSum(0, 0, 0);
+            int squareSum = sum;
             int l = j + m;
             for (int k = i; k < n; k++) {
                 for (; l < n; l++) {
+                    x = k;
+                    y = l;
                     sum = 0;
-                    int squareSum2 = 0;
-                    for (int t = 0; t < m; t++) {
-                        sum += weight[k][l + t];
-                        if (sum > c) break;
-                        squareSum2 += weight[k][l + t] * weight[k][l + t];
-                    }
+                    calSum(0, 0, 0);
+                    int squareSum2 = sum;
                     maxSum = max(maxSum, squareSum + squareSum2);
                 }
                 l = 0;
