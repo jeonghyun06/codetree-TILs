@@ -8,7 +8,7 @@ int weight[10][10];
 int x, y;
 
 void calSum(int i, int curW, int curV) {
-    if (curW > c || i > m) return;
+    if (curW > c || i > m || y + i >= n) return;
     sum = max(sum, curV);
     calSum(i + 1, curW, curV);
     calSum(i + 1, curW + weight[x][y + i], curV + weight[x][y + i] * weight[x][y + i]);
@@ -16,6 +16,7 @@ void calSum(int i, int curW, int curV) {
 
 void bt() {
     for (int i = 0; i < n; i++) {
+        //cout << maxSum << '\n';
         for (int j = 0; j < n; j++) {
             x = i;
             y = j;
@@ -31,6 +32,7 @@ void bt() {
                     calSum(0, 0, 0);
                     int squareSum2 = sum;
                     maxSum = max(maxSum, squareSum + squareSum2);
+                    
                 }
                 l = 0;
             }
