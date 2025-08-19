@@ -19,6 +19,7 @@ void bt() {
         for (int j = 0; j < n; j++) {
             x = i;
             y = j;
+            sum = 0;
             calSum(0, 0, 0);
             int squareSum = sum;
             int l = j + m;
