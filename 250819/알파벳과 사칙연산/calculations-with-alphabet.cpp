@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 using namespace std;
 
 string expression;
 vector<int> alpha;
-int maxRslt;
+int maxRslt = INT_MIN;
+
 void cal(int cnt){
     if(cnt==6){
         int rslt = alpha[expression[0]-'a'];
