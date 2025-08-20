@@ -28,8 +28,8 @@ int main() {
         }
     }
     
-    // visited[0]++;
-    cal(0, 0, 0);
+    visited[0]++;
+    cal(1, 0, 0);
     cout<<minSum;
 
     return 0;
