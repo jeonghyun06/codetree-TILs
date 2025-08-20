@@ -12,6 +12,7 @@ void cal(int cnt, int x){
             xorResult = xorResult ^ A[selected[i]]; 
         }
         maxXor = max(maxXor, xorResult);
+        return;
     }
     for(; x < n; x++){
         selected[cnt] = x;
