@@ -3,7 +3,7 @@
 using namespace std;
 
 int n, maxSum;
-int visited[2][10];
+int visited[10];
 int grid[10][10];
 
 void cal(int cnt, int sum){
@@ -11,17 +11,14 @@ void cal(int cnt, int sum){
         maxSum = max(sum, maxSum);
         return;
     }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(visited[0][i] || visited[1][j]) continue;
-            visited[0][i]++;
-            visited[1][j]++;
-            cal(cnt + 1, sum + grid[i][j]);
+    for(int j = 0; j < n; j++){
+        if(visited[j]) continue;
+        visited[j]++;
+        cal(cnt + 1, sum + grid[cnt][j]);
 
-            visited[0][i]--;
-            visited[1][j]--;
-        }
+        visited[j]--;
     }
+    
 }
 
 int main() {
@@ -34,7 +31,7 @@ int main() {
     }
 
     cal(0, 0);
-    
+
     cout<<maxSum;
 
     return 0;
