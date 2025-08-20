@@ -12,7 +12,7 @@ void cal(int cnt, int sum,int before){
         return;
     }
     for(int i = 0; i < n; i++){
-        if(visited[i]) continue;
+        if(visited[i] || A[before][i]==0) continue;
         visited[i]++;
         cal(cnt + 1, sum + A[before][i], i);
         visited[i]--;
@@ -27,8 +27,9 @@ int main() {
             cin >> A[i][j];
         }
     }
-
-    cal(0, 0, 0);
+    
+    visited[0]++;
+    cal(1, 0, 0);
     cout<<minSum;
 
     return 0;
