@@ -24,7 +24,7 @@ void cal(int cnt, int pos){
     }
 
     for(; pos < cntCoin; pos++){
-        getCoin[cnt] = (coin[pos].first, coin[pos].second);
+        getCoin[cnt] = coin[pos].second;
         cal(cnt + 1, pos + 1);
     }
 }
