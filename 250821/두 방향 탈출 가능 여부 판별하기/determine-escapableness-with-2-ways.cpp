@@ -8,7 +8,7 @@ int isPossible;
 
 void path(int x, int y){
     if(x==N-1 && y==N-1){
-        isPossible++;
+        isPossible=1;
         return;
     }
     if(x + 1 < N && grid[x + 1][y] == 1 && !visited[x + 1][y]) {
