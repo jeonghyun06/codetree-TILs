@@ -58,6 +58,7 @@ int main() {
         }
     }
 
+    if(maxCnt==0) minK = 1;
     cout<<minK<<' '<<maxCnt;
 
     return 0;
