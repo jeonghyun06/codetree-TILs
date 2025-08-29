@@ -50,6 +50,7 @@ void chooseCity(int cnt, int r, int c){
         }
 
         maxCnt = max(cnt, maxCnt);
+        return;
     }
     int j = c;
     for(int i = r; i < n; i++){
