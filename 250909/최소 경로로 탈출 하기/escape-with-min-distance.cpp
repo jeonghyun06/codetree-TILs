@@ -15,6 +15,7 @@ void BFS(int x, int y){
 
     visited[x][y]++;
     path.push({x, y});
+    step[n-1][m-1] = -1;
 
     while(!path.empty()){
         int cx = path.front().first;
