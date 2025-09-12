@@ -4,7 +4,7 @@ using namespace std;
 
 int N, minCnt;
 queue<pair<int, int>> q;
-int visited[1000001];
+int visited[1000000 * 2];
 
 void bfs(){
     while(!q.empty()){
