@@ -7,7 +7,7 @@ int n;
 int main() {
     cin >> n;
 
-    int rect[1001]{};
+    long long int rect[1001]{};
 
     rect[0] = 1;
     rect[1] = 2;
