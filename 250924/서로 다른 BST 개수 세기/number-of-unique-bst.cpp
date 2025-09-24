@@ -18,11 +18,9 @@ int main() {
     // dp[6] = dp[5] * dp[0] * 2 + dp[4] * dp[1] * 2 + dp[3] * dp[2] * 2;
 
     for(int i = 2; i <= n; i++){
-        for(int j = i - 1; j >= i / 2; j--){
-            dp[i] += dp[j] * dp[i - j - 1] * 2;
+        for(int j = i - 1; j >= 0; j--){
+            dp[i] += dp[j] * dp[i - j - 1];
         }
-        if(i%2)
-            dp[i] -= dp[i/2] * dp[i/2];
     }
 
     cout<<dp[n];
