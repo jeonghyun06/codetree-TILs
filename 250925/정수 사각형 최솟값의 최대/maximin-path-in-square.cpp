@@ -14,9 +14,10 @@ int main() {
         }
     }
 
-    for(int i = 1; i <= n; i++){
-        grid[0][i] = grid[1][i];
-        grid[i][0] = grid[i][1];
+    grid[0][1] = grid[1][0] = grid[1][1];
+    for(int i = 2; i <= n; i++){
+        grid[0][i] = min(grid[1][i - 1], grid[1][i]);
+        grid[i][0] = min(grid[i - 1][1], grid[i][1]);
     }
 
     for(int i = 1; i <= n; i++){
